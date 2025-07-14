@@ -26,7 +26,10 @@ Think about which debugging methods you found most useful and how you might appl
 
 console.log("Welcome to the bootcamp
 
-// What’s Wrong?
+// What’s Wrong? .. This line is missing a closing quote.");
+// Fix: Add a closing quote to the string.
+console.log("Welcome to the bootcamp");
+// This error is a syntax error because the string is not properly closed.
 
 
 // Program B
@@ -39,7 +42,17 @@ for (let i = 0; i < numbers.length; i++) {
   console.log(doubled);
 }
 
-// What’s Wrong?
+// What’s Wrong? .. The array contains a string that cannot be multiplied by a number.
+// Fix: Filter out non-numeric values before performing the multiplication.
+// this error is a syntax error because the code attempts to perform an operation on a non-numeric value.
+// Fixing the runtime error by filtering out non-numeric values
+
+let numbers = [numbers.filter(num => typeof num === 'number');
+for (let i = 0; i < numbers.length; i++) {
+  let doubled = numbers[i] * 2;
+  console.log(doubled);
+}
+
 
 
 
@@ -59,4 +72,15 @@ function isPrime(num) {
 
 console.log(isPrime(7)); // Expected true but gets false
 
-// What’s Wrong?
+// What’s Wrong? .. The logic in the function is incorrect.
+// Fix: Change the return value in the if condition to false when num is divisible by i.
+// This error is a logic error because the function does not correctly determine if a number is prime.
+function isPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // Corrected to indicate num is NOT prime
+    }
+  }
+  return true; // Corrected to indicate num IS prime
+}
